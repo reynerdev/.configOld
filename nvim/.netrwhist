@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/rloza/.config/nvim/vim-plug'
+let g:netrw_dirhist_5='/home/rloza/.config/nvim/general/settings.vim'
+let g:netrw_dirhist_4='/home/rloza/.local/share/nvim/site'
+let g:netrw_dirhist_3='/home/rloza/.config/nvim'
+let g:netrw_dirhist_2='/home/rloza/.config'
+let g:netrw_dirhist_1='/home/rloza/.config/nvim'
