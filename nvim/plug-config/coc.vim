@@ -163,3 +163,17 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+""""""""""""""""""""""EXTENSION""""""""""""""""""""""
+:nnoremap <space>e :CocCommand explorer<CR>
+
+" List all presets
+nnoremap <space>eb :CocCommand explorer --preset buffer<CR>
+nnoremap <space>el :CocList explPresets
+
+
+" Prettier coc 
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+

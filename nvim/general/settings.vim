@@ -11,6 +11,7 @@
  set pumheight=10                        " Makes popup menu smaller
  set fileencoding=utf-8                  " The encoding written to file
  set ruler                                     " Show the cursor position all
+ set autoread                             "reload file , it helps when we might havethef ile edited outside currebnt buffer
 " the time
  set cmdheight=2                         " More space for displaying messages
  set iskeyword+=-                          " treat dash separated words as a
@@ -57,7 +58,12 @@ au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm
 "
 set statusline=
 set statusline+=%F "long file name status line 
+:syntax sync fromstart
 
+" property to set fold and use it with treesitter
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
+set relativenumber  
 
 if has('termguicolors')
 
@@ -65,10 +71,37 @@ if has('termguicolors')
 
 endif
 
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'darker'
-colorscheme material
-let g:airline_theme ='material'
+" Vim Script
+lua require('github-theme').setup()
+
+" Example config in VimScript
+lua << EOF
+require("github-theme").setup({
+  darkFloat = true,
+  themeStyle = "dimmed",
+  sidebars = {"qf", "vista_kind", "terminal", "packer"},
+
+  -- Change the "hint" color to the "orange" color, and make the "error" color bright red
+  colors = {hint = "orange", error = "#ff0000"}
+})
+EOF
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" " Example config in Vim-Script
+" let g:material_style = 'palenight'
+" let g:material_italic_comments = v:true
+" let g:material_italic_keywords = v:true
+" let g:material_italic_functions = v:true
+" let g:material_contrast = v:true
+
+" " Load the colorsheme
+" colorscheme material
+
+
+
+" noremap <leader>mm :lua require('material.functions').toggle_style()<CR>
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:sonokai_style = 'default'
 

@@ -17,3 +17,7 @@ map Q  <C-W>q
 "
 "Space +  saves the file
 nmap  <C-s> :write<Enter>
+
+
+nnoremap <silent> <C-j> :Lspsaga diagnostic_jump_next<CR>
+
