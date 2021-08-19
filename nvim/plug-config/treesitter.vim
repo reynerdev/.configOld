@@ -11,17 +11,16 @@
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
 
-ensure_installed = {"tsx","json","yaml","python","scss","css", "javascript", "html"},
+ensure_installed = {"tsx","json","yaml","python","scss","css", "javascript" },
   highlight = {
 
     enable = true,
 
-    disable = {},
+    disable = {"html"},
 
   },
 
   indent = {
-
     enable = false,
 
     disable = {},

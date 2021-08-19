@@ -5,7 +5,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
                  " lua vim from windwp)
                  "Plug 'jiangmiao/auto-pairs'
                  " Stable version of  coc, were going to test lsp 
-                 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+                " Plug 'neoclide/coc.nvim', {'branch': 'release'}
                  "One Dark Theme"
                 Plug 'joshdick/onedark.vim'
                 "Vim-one ColorScheme"
@@ -59,6 +59,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
                 Plug 'glepnir/lspsaga.nvim'
                 "autopairs plugin
                 Plug 'windwp/nvim-autopairs' 
+Plug 'windwp/nvim-ts-autotag'
                 "vim snippet
                 Plug 'hrsh7th/vim-vsnip'
                 Plug 'rafamadriz/friendly-snippets' 

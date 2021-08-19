@@ -25,6 +25,7 @@ source $HOME/.config/nvim/plug-config/nvim-tree.vim
 source $HOME/.config/nvim/plug-config/lsp.vim
 source $HOME/.config/nvim/plug-config/compe-config.vim
 source $HOME/.config/nvim/plug-config/lspsaga.vim
+source $HOME/.config/nvim/plug-config/autopairs.vim
 
 
 " if exists('g:vscode')

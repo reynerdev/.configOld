@@ -3,14 +3,23 @@
 -- general
 lvim.format_on_save = true
 lvim.lint_on_save = true
-lvim.colorscheme = "spacegray"
+lvim.colorscheme = "sonokai"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- unmap a default keymapping
+lvim.keys.normal_mode["Y"] = "y$"
+lvim.keys.normal_mode[";f"] = "<cmd>Telescope find_files<cr>"
+lvim.keys.normal_mode[";r"] = "<cmd>Telescope live_grep<cr>"
+-- lvim.keys.normal_mode["\\"] = "<cmd>Telescope buffers<cr>"
+vim.api.nvim_set_keymap('n', '\\', '<cmd>Telescope buffers<cr>', { noremap = true, silent = true })
+
+-- to try
+-- noremap <leader>y "+y
+-- noremap <leader>p "+p
 -- lvim.keys.normal_mode["<C-Up>"] = ""
+-- unmap a default keymapping
 -- edit a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 
@@ -73,7 +82,33 @@ lvim.builtin.treesitter.highlight.enabled = true
 --     }
 -- }
 
+-- Additional Plugins
+lvim.plugins = {
+    {"sainnhe/sonokai"}, {"rose-pine/neovim"}
+}
+
+vim.g.rose_pine_variant = 'moon'
+
+-- Enable italics
+vim.g.rose_pine_enable_italics = false
+
+-- Use terminal background
+-- Note: Set to true to fix any funky background colors
+vim.g.rose_pine_disable_background = false
+
+-- Set colorscheme after options
+vim.cmd('colorscheme rose-pine')
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
+
+
+-- lvim.lang.javascript.formatters = { { exe = "prettier" } }
+
+
+-- lvim.lang.javascript.linters = { { exe = "eslint_d" } }
+
